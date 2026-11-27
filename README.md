@@ -1,0 +1,618 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ARCHSPACE | Design Studio</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #F5F1E9;
+            color: #29372F;
+        }
+
+        /* Navigation */
+        header {
+            background: #29372F;
+            color: white;
+            padding: 22px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        header h1 {
+            margin: 0;
+            letter-spacing: 3px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 18px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #E5A47E;
+        }
+
+        /* Hero section */
+        .hero {
+            background: #29372F;
+            color: white;
+            padding: 65px 8%;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            margin: 10px 0;
+        }
+
+        .hero p {
+            color: #D5D9D2;
+            line-height: 1.7;
+        }
+
+        .hero img {
+            width: 48%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 45% 10px 10px 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .circle {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: #B97855;
+            opacity: 0.35;
+            right: 35%;
+            top: -90px;
+        }
+
+        button {
+            background: #C17D58;
+            color: white;
+            border: none;
+            padding: 12px 22px;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #A96343;
+        }
+
+        /* General sections */
+        main {
+            padding: 35px 8%;
+        }
+
+        section {
+            margin-bottom: 65px;
+        }
+
+        .heading {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #777D74;
+            margin-bottom: 25px;
+        }
+
+        /* Project cards */
+        .cards {
+            display: flex;
+            gap: 22px;
+            flex-wrap: wrap;
+        }
+
+        article {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            flex: 1;
+            min-width: 230px;
+            box-shadow: 0 5px 20px #29372F12;
+            transition: 0.3s;
+        }
+
+        article:hover {
+            transform: translateY(-5px);
+        }
+
+        article h3 {
+            margin-top: 5px;
+        }
+
+        .project-img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Statistics */
+        .stats {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            flex: 1;
+            min-width: 140px;
+            padding: 25px;
+            border-radius: 15px;
+            background: #E7D5C2;
+        }
+
+        .stat:nth-child(2) {
+            background: #D9E2D3;
+        }
+
+        .stat:nth-child(3) {
+            background: #E8C5B1;
+        }
+
+        .stat h2 {
+            font-size: 32px;
+            margin: 0;
+        }
+
+        /* Status labels */
+        .approved {
+            color: #34764D;
+            font-weight: bold;
+        }
+
+        .pending {
+            color: #B47735;
+            font-weight: bold;
+        }
+
+        /* Gallery */
+        .gallery {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .gallery img {
+            width: 31%;
+            min-width: 180px;
+            height: 210px;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Version history */
+        .version {
+            border-left: 4px solid #C17D58;
+            padding: 10px 20px;
+            margin-bottom: 15px;
+            background: white;
+            border-radius: 0 10px 10px 0;
+        }
+
+        /* Comments */
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #D5D0C7;
+            border-radius: 8px;
+            font-family: Arial;
+        }
+
+        textarea {
+            height: 90px;
+        }
+
+        .comment {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 12px;
+        }
+
+        /* Footer */
+        footer {
+            background: #29372F;
+            color: white;
+            padding: 30px 8%;
+            text-align: center;
+        }
+
+        footer p {
+            color: #D5D9D2;
+        }
+
+        /* Mobile friendly */
+        @media (max-width: 700px) {
+            .hero {
+                flex-direction: column;
+            }
+
+            .hero h2 {
+                font-size: 36px;
+            }
+
+            .hero img {
+                width: 100%;
+            }
+
+            nav a {
+                margin: 5px;
+                display: inline-block;
+            }
+
+            .gallery img {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<header>
+    <h1>ARCHSPACE.</h1>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#proposals">Proposals</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#history">History</a>
+    </nav>
+</header>
+
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+
+    <div class="circle"></div>
+
+    <div class="hero-text">
+        <p>ARCHITECTURE • DESIGN • CREATIVITY</p>
+
+        <h2>Designing spaces.<br>
+            Creating visions.</h2>
+
+        <p>
+            A creative platform to present architectural
+            projects, explore design proposals and
+            manage every revision in one place.
+        </p>
+
+        <button onclick="location.href='#projects'">
+            Explore Projects
+        </button>
+    </div>
+
+    <img
+    src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=900"
+    alt="Modern architectural interior">
+
+</section>
+
+
+<main>
+
+<!-- Statistics -->
+<section>
+    <div class="stats">
+
+        <div class="stat">
+            <h2>04</h2>
+            <p>Projects</p>
+        </div>
+
+        <div class="stat">
+            <h2>08</h2>
+            <p>Proposals</p>
+        </div>
+
+        <div class="stat">
+            <h2>03</h2>
+            <p>Approved Designs</p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- Project Profile -->
+<section id="projects">
+
+    <h2 class="heading">Featured Projects.</h2>
+
+    <p class="subtitle">
+        Explore our latest architectural creations.
+    </p>
+
+    <div class="cards">
+
+        <article>
+            <img class="project-img"
+            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600"
+            alt="Modern house">
+
+            <h3>Modern Dream House</h3>
+
+            <p><b>Location:</b> Chandigarh, India</p>
+
+            <p><b>Architect:</b> Design Studio</p>
+
+            <p>
+                A modern residential project focusing
+                on natural lighting and open spaces.
+            </p>
+        </article>
+
+        <article>
+            <img class="project-img"
+            src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600"
+            alt="Modern building interior">
+
+            <h3>Urban Living</h3>
+
+            <p><b>Location:</b> Delhi, India</p>
+
+            <p><b>Architect:</b> Creative Studio</p>
+
+            <p>
+                A contemporary design combining
+                comfort, greenery and modern materials.
+            </p>
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- Design Proposals -->
+<section id="proposals">
+
+    <h2 class="heading">Design Proposals.</h2>
+
+    <p class="subtitle">
+        Different ideas. Different possibilities.
+    </p>
+
+    <div class="cards">
+
+        <article>
+            <h3>01 / Modern Design</h3>
+
+            <p>
+                Minimalist design with open spaces
+                and large glass windows.
+            </p>
+
+            <p><b>Materials:</b> Glass, Concrete, Wood</p>
+
+            <p class="approved">● Approved</p>
+        </article>
+
+        <article>
+            <h3>02 / Sustainable Design</h3>
+
+            <p>
+                Eco-friendly architecture with
+                natural lighting and greenery.
+            </p>
+
+            <p><b>Materials:</b> Bamboo, Stone, Recycled Wood</p>
+
+            <p class="pending">● Under Review</p>
+        </article>
+
+        <article>
+            <h3>03 / Minimal Design</h3>
+
+            <p>
+                Simple architectural forms with
+                functional and elegant spaces.
+            </p>
+
+            <p><b>Materials:</b> Wood, Steel, Glass</p>
+
+            <p class="pending">● Pending</p>
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- Image Gallery -->
+<section id="gallery">
+
+    <h2 class="heading">Visual Gallery.</h2>
+
+    <p class="subtitle">
+        A collection of architectural inspiration.
+    </p>
+
+    <div class="gallery">
+
+        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=500"
+        alt="Interior architecture">
+
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=500"
+        alt="Modern residential design">
+
+        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=500"
+        alt="Modern interior design">
+
+    </div>
+
+</section>
+
+
+<!-- Version History -->
+<section id="history">
+
+    <h2 class="heading">Version History.</h2>
+
+    <p class="subtitle">
+        Every design has a story of evolution.
+    </p>
+
+    <div class="version">
+        <h3>Version 1.0</h3>
+        <p>Initial architectural design uploaded.</p>
+    </div>
+
+    <div class="version">
+        <h3>Version 2.0</h3>
+        <p>Updated materials and building layout.</p>
+    </div>
+
+    <div class="version">
+        <h3>Version 3.0</h3>
+        <p>Final design with updated drawings.</p>
+    </div>
+
+</section>
+
+
+<!-- Comments -->
+<section id="comments">
+
+    <h2 class="heading">Let's Discuss.</h2>
+
+    <p class="subtitle">
+        Share your thoughts and suggestions.
+    </p>
+
+    <div id="commentList">
+
+        <div class="comment">
+            <b>Architect:</b>
+            <p>The design looks impressive!</p>
+        </div>
+
+    </div>
+
+    <form onsubmit="addComment(event)">
+
+        <input type="text" id="username"
+        placeholder="Your Name" required>
+
+        <textarea id="message"
+        placeholder="Write your comment..." required></textarea>
+
+        <button type="submit">Post Comment</button>
+
+    </form>
+
+</section>
+
+
+<!-- Approval Status -->
+<section id="approval">
+
+    <h2 class="heading">Project Approval.</h2>
+
+    <p class="subtitle">
+        Track the progress of design proposals.
+    </p>
+
+    <article>
+
+        <p>
+            Modern Design:
+            <span class="approved">Approved</span>
+        </p>
+
+        <p>
+            Sustainable Design:
+            <span class="pending">Under Review</span>
+        </p>
+
+        <p>
+            Minimal Design:
+            <span class="pending">Pending</span>
+        </p>
+
+    </article>
+
+</section>
+
+</main>
+
+
+<!-- Footer -->
+<footer>
+
+    <h2>ARCHSPACE.</h2>
+
+    <p>Where architecture meets imagination.</p>
+
+    <p>© 2026 ARCHSPACE | All Rights Reserved</p>
+
+</footer>
+
+
+<!-- Simple JavaScript for Comments -->
+<script>
+
+    function addComment(event) {
+
+        event.preventDefault();
+
+        let name = document.getElementById("username").value;
+        let message = document.getElementById("message").value;
+
+        let comment = document.createElement("div");
+
+        comment.className = "comment";
+
+        comment.innerHTML =
+            "<b>" + name + ":</b><p>" + message + "</p>";
+
+        document.getElementById("commentList")
+        .appendChild(comment);
+
+        document.querySelector("form").reset();
+
+    }
+
+</script>
+
+</body>
+</html>
